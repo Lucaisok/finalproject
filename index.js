@@ -62,6 +62,7 @@ app.post("/register", (req, res) => {
                     .then((result) => {
                         console.log(result);
                         req.session.userId = result.rows[0].id; //here we set userId
+                        req.session.location = result.rows[0].location; // here we set the location value we´ll use later for retrieve info about customers.
                         res.json({ success: true });
                     })
                     .catch((err) => console.log(err));
