@@ -3,16 +3,16 @@ import ReactDOM from "react-dom";
 import Welcome from "./welcome";
 import App from "./app";
 
-// let elem;
-// const userIsLoggedIn = location.pathname != "/welcome";
+let elem;
+const userIsLoggedIn = location.pathname != "/welcome";
 
-// if (!userIsLoggedIn) {
-//     elem = <Welcome />;
-// } else {
-//     elem = <App />;
-// }
+if (!userIsLoggedIn) {
+    elem = <Welcome />;
+} else {
+    elem = <App />;
+}
 
-ReactDOM.render(<Welcome />, document.querySelector("main"));
+ReactDOM.render(elem, document.querySelector("main"));
 
 // function HelloWorld() {
 //     return (

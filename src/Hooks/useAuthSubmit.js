@@ -4,18 +4,20 @@ import axios from "../axios";
 export function useAuthSubmit(path, values) {
     const [error, setError] = useState(false);
     const handleClick = () => {
-        async () => {
-            try {
-                const { data } = await axios.post(path, values);
+        axios
+            .post(path, values)
+            .then(({ data }) => {
+                console.log(data);
                 if (!data.success) {
                     setError(true);
                 } else {
                     location.replace("/");
                 }
-            } catch (err) {
+            })
+            .catch((err) => {
                 console.log(err);
-            }
-        };
+                setError(true);
+            });
     };
     return [error, handleClick];
 }

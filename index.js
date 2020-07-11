@@ -39,6 +39,93 @@ if (process.env.NODE_ENV != "production") {
 
 app.use(express.static("public"));
 
+app.post("/register", (req, res) => {
+    console.log(req.body);
+    if (
+        req.body.first != "" &&
+        req.body.last != "" &&
+        req.body.location != "" &&
+        req.body.email != "" &&
+        req.body.password != ""
+    ) {
+        hash(req.body.password)
+            .then((hashedPassword) => {
+                console.log("hashed", hashedPassword);
+                // let hashedPassword = hashedPassword;
+                db.registration(
+                    req.body.first,
+                    req.body.last,
+                    req.body.email,
+                    req.body.location,
+                    hashedPassword
+                )
+                    .then((result) => {
+                        console.log(result);
+                        req.session.userId = result.rows[0].id; //here we set userId
+                        res.json({ success: true });
+                    })
+                    .catch((err) => console.log(err));
+            })
+            .catch((err) => console.log(err));
+    } else {
+        res.json({ success: false });
+    }
+});
+
+app.post("/login", (req, res) => {
+    console.log(req.body);
+    if (req.body.email != "" && req.body.password != "") {
+        db.getHashed(req.body.email)
+            .then((hashedPassObj) => {
+                console.log("hashedPassObj", hashedPassObj);
+                let hashedPassword = hashedPassObj.rows[0].password;
+                compare(req.body.password, hashedPassword)
+                    .then((match) => {
+                        console.log("password is correct? ", match);
+                        if (match) {
+                            db.getId(req.body.email)
+                                .then((result) => {
+                                    console.log("result: ", result);
+                                    req.session.userId = result.rows[0].id; //her we call back userId
+                                    res.json({ success: true });
+                                })
+                                .catch((err) => console.log(err));
+                        }
+                    })
+                    .catch((err) => console.log(err));
+            })
+            .catch((err) => console.log(err));
+    } else {
+        res.json({ success: false });
+    }
+});
+
+app.get("/user", async function (req, res) {
+    try {
+        const data = await db.getUserById(req.session.userId);
+        console.log("usersData: ", data);
+        res.json(data.rows[0]);
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+app.get("/welcome", (req, res) => {
+    if (req.session.userId) {
+        res.redirect("/");
+    } else {
+        res.sendFile(__dirname + "/index.html");
+    }
+});
+
+app.get("/", (req, res) => {
+    if (req.session.userId) {
+        res.sendFile(__dirname + "/index.html");
+    } else {
+        res.redirect("welcome");
+    }
+});
+
 app.get("*", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 });
