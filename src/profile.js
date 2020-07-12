@@ -1,4 +1,5 @@
 import React from "react";
+import Generator from "./generator";
 
 export default function Profile(props) {
     return (
@@ -6,6 +7,7 @@ export default function Profile(props) {
             <h1>
                 {props.first} {props.last}
             </h1>
+            <Generator />
         </div>
     );
 }
