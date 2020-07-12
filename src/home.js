@@ -52,7 +52,45 @@ export default function Home() {
                 <img className="erase" src="images/erase.png" />
                 <img className="surface" src="images/surface1.png" />
                 <img className="delete" src="images/delete.png" />
+                <img className="plant" src="images/sprout.png" />
             </div>
+            <div className="paper">
+                <h1>no more paper</h1>
+                <img className="contract" src="images/contract.png" />
+                <h3>
+                    no more waste{" "}
+                    <span>
+                        <br></br>
+                    </span>{" "}
+                    no more mess{" "}
+                    <span>
+                        <br></br>
+                    </span>{" "}
+                    all the data are safely collected in{" "}
+                    <span>
+                        <br></br>
+                    </span>{" "}
+                    our database{" "}
+                </h3>
+                <img className="world" src="images/care.png" />
+                <img className="wood" src="images/wood.png" />
+            </div>
+            <div className="use">
+                <h1>how to use ?</h1>
+                <h3 className="puntoUno">
+                    1. generate the QR code{" "}
+                    <span>
+                        <br></br>
+                    </span>{" "}
+                    for your customers
+                </h3>
+                <h3 className="puntoDue">2. they will fill the form</h3>
+                <h3 className="puntoTre">3. it´s done!</h3>
+                <img className="search" src="images/search.png" />
+                <img className="code" src="images/code.png" />
+                <img className="qr" src="images/qr.png" />
+            </div>
+            <div className="footer"></div>
         </div>
     );
 }

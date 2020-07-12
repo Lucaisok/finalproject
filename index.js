@@ -111,6 +111,30 @@ app.get("/user", async function (req, res) {
     }
 });
 
+app.post("/userForm", async function (req, res) {
+    console.log(req.body);
+    try {
+        const data = await db.collect(
+            req.body.customerFirst,
+            req.body.customerLast,
+            req.body.customerEmail,
+            req.body.telephone,
+            req.body.tableNumber,
+            req.body.location,
+            req.body.guestsNumber,
+            req.body.day,
+            req.body.month,
+            req.body.year,
+            req.body.hour
+        );
+        console.log(data);
+        res.json({ success: true });
+    } catch (err) {
+        console.log(err);
+        res.json({ success: false });
+    }
+});
+
 app.get("/welcome", (req, res) => {
     if (req.session.userId) {
         res.redirect("/");

@@ -8,6 +8,19 @@ export default function Register() {
 
     return (
         <div>
+            <div className="welcomeHeader">
+                <div className="logo">
+                    <p>Collect</p>
+                </div>
+                <div className="nav">
+                    {/* <Link to={"/login"}>
+                        <button className="logButt">LOGIN</button>
+                    </Link>
+                    <Link to={"/register"}>
+                        <button className="signButt">SIGN UP</button>
+                    </Link> */}
+                </div>
+            </div>
             {error && <p>Ops...something went wrong</p>}
             <input
                 name="first"

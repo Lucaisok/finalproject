@@ -39,3 +39,36 @@ module.exports.getUserById = (id) => {
         [id]
     );
 };
+
+module.exports.collect = (
+    first,
+    last,
+    email,
+    tel,
+    location,
+    tavolo,
+    guests,
+    giorno,
+    mese,
+    anno,
+    ora
+) => {
+    return db.query(
+        `
+    INSERT INTO customers (first, last, email, tel, location, tavolo, guests, giorno, mese, anno, ora)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
+        [
+            first,
+            last,
+            email,
+            tel,
+            location,
+            tavolo,
+            guests,
+            giorno,
+            mese,
+            anno,
+            ora,
+        ]
+    );
+};

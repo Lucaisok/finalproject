@@ -2,6 +2,9 @@ import React from "react";
 import axios from "./axios";
 import { BrowserRouter, Route } from "react-router-dom";
 import Profile from "./profile";
+import Thanks from "./Hooks/thanks";
+import UserForm from "./Hooks/userForm";
+import Generator from "./generator";
 
 class App extends React.Component {
     constructor(props) {
@@ -38,6 +41,17 @@ class App extends React.Component {
                             location={this.state.location}
                         />
                     )}
+                />
+                <Route exact path="/thanks" component={Thanks} />
+                <Route
+                    exact
+                    path="/userForm"
+                    render={() => <UserForm location={this.state.location} />}
+                />
+                <Route
+                    exact
+                    path="/generator"
+                    render={() => <Generator location={this.state.location} />}
                 />
             </BrowserRouter>
         );

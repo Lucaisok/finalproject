@@ -9,3 +9,21 @@ CREATE TABLE users(
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+--DROP TABLE IF EXISTS customers;
+
+CREATE TABLE customers(
+    id SERIAL PRIMARY KEY,
+    first VARCHAR(255) NOT NULL,
+    last VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    tel VARCHAR NOT NULL,
+    location VARCHAR(255),
+    tavolo VARCHAR NOT NULL,
+    guests VARCHAR NOT NULL,
+    giorno VARCHAR NOT NULL,
+    mese VARCHAR(255) NOT NULL,
+    anno VARCHAR NOT NULL,
+    ora VARCHAR NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

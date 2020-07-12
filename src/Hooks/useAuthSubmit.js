@@ -11,7 +11,11 @@ export function useAuthSubmit(path, values) {
                 if (!data.success) {
                     setError(true);
                 } else {
-                    location.replace("/");
+                    if (path == "/login" || path == "/register") {
+                        location.replace("/");
+                    } else {
+                        location.replace("/thanks"); //to be created
+                    }
                 }
             })
             .catch((err) => {
