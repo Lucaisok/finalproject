@@ -46,7 +46,8 @@ app.post("/register", (req, res) => {
         req.body.last != "" &&
         req.body.location != "" &&
         req.body.email != "" &&
-        req.body.password != ""
+        req.body.password != "" &&
+        req.body.password == req.body.repeatPassword
     ) {
         hash(req.body.password)
             .then((hashedPassword) => {

@@ -22,34 +22,55 @@ export default function Register() {
                 </div>
             </div>
             {error && <p>Ops...something went wrong</p>}
-            <input
-                name="first"
-                placeholder="First Name"
-                onChange={handleChange}
-            />
-            <input
-                name="last"
-                placeholder="Last Name"
-                onChange={handleChange}
-            />
-            <input
-                name="location"
-                placeholder="Location"
-                onChange={handleChange}
-            />
-            <input
-                name="email"
-                type="email"
-                placeholder="Email"
-                onChange={handleChange}
-            />
-            <input
-                name="password"
-                type="password"
-                placeholder="Password"
-                onChange={handleChange}
-            />
-            <button onClick={handleClick}>Submit</button>
+            <h1 className="sign">sign up</h1>
+            <img className="cont" src="images/cont.png" />
+            <img className="coca" src="images/coca.png" />
+            <img className="chop" src="images/chop.png" />
+            <img className="tuna" src="images/tuna.png" />
+            <div className="regInp">
+                <input
+                    className="one"
+                    name="first"
+                    placeholder="First Name"
+                    onChange={handleChange}
+                />
+                <input
+                    className="two"
+                    name="last"
+                    placeholder="Last Name"
+                    onChange={handleChange}
+                />
+                <input
+                    className="tre"
+                    name="location"
+                    placeholder="Location"
+                    onChange={handleChange}
+                />
+                <input
+                    className="quattro"
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    onChange={handleChange}
+                />
+                <input
+                    className="cinque"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    onChange={handleChange}
+                />
+                <input
+                    className="sei"
+                    name="repeatPassword"
+                    type="password"
+                    placeholder="Password"
+                    onChange={handleChange}
+                />
+            </div>
+            <button className="sigButt" onClick={handleClick}>
+                SIGN UP
+            </button>
         </div>
     );
 }

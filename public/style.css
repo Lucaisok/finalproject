@@ -381,7 +381,7 @@ body {
 
 .care2 {
     position: absolute;
-    top: 507px;
+    top: 500px;
     left: 200px;
     width: 184px;
     height: 207px;
@@ -406,6 +406,170 @@ body {
     height: 238px;
     background: #27ac93 0% 0% no-repeat padding-box;
     opacity: 1;
+}
+
+.one {
+    position: absolute;
+    top: 300px;
+    left: 359px;
+    width: 322px;
+    height: 46px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000033;
+    border: 2px solid #27ac93;
+    border-radius: 24px;
+    opacity: 0.8;
+}
+
+.two {
+    position: absolute;
+    top: 411px;
+    left: 359px;
+    width: 322px;
+    height: 46px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000033;
+    border: 2px solid #27ac93;
+    border-radius: 24px;
+    opacity: 0.8;
+}
+
+.tre {
+    position: absolute;
+    top: 522px;
+    left: 359px;
+    width: 322px;
+    height: 46px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000033;
+    border: 2px solid #27ac93;
+    border-radius: 24px;
+    opacity: 0.8;
+}
+
+.quattro {
+    position: absolute;
+    top: 300px;
+    left: 748px;
+    width: 322px;
+    height: 46px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000033;
+    border: 2px solid #27ac93;
+    border-radius: 24px;
+    opacity: 0.8;
+}
+
+.cinque {
+    position: absolute;
+    top: 411px;
+    left: 748px;
+    width: 322px;
+    height: 46px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000033;
+    border: 2px solid #27ac93;
+    border-radius: 24px;
+    opacity: 0.8;
+}
+
+.sei {
+    position: absolute;
+    top: 522px;
+    left: 748px;
+    width: 322px;
+    height: 46px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000033;
+    border: 2px solid #27ac93;
+    border-radius: 24px;
+    opacity: 0.8;
+}
+
+.regInp {
+    position: relative;
+    bottom: 80px;
+}
+
+.regInp input {
+    text-align: center;
+    font: Thin 25px/29px Roboto;
+    letter-spacing: 0px;
+    color: #27ac93;
+    text-transform: lowercase;
+    opacity: 1;
+}
+
+.sign {
+    position: absolute;
+    top: 111px;
+    left: 364px;
+    color: #1f4554;
+}
+
+.sigButt {
+    position: absolute;
+    top: 550px;
+    left: 560px;
+    width: 280px;
+    height: 56px;
+    background: #27ac93 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000033;
+    border-radius: 4px;
+    opacity: 1;
+    color: white;
+    font: Thin 35px/41px var(--unnamed-font-family-roboto);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: center;
+    font: Thin 35px/41px Roboto;
+    letter-spacing: 0px;
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 1;
+    border: none;
+}
+
+.cont {
+    position: absolute;
+    top: 88px;
+    left: 521px;
+    width: 83px;
+    height: 83px;
+    transform: matrix(0.98, 0.19, -0.19, 0.98, 0, 0);
+    background: transparent url("img/contract.png") 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.coca {
+    position: absolute;
+    top: 156px;
+    left: 202px;
+    width: 100px;
+    height: 103px;
+    background: transparent url("img/coca-leaves.png") 0% 0% no-repeat
+        padding-box;
+    opacity: 1;
+}
+
+.chop {
+    position: absolute;
+    top: 340px;
+    left: 198px;
+    width: 93px;
+    height: 93px;
+    background: transparent url("img/037---Chopsticks.png") 0% 0% no-repeat
+        padding-box;
+    opacity: 1;
+}
+
+.tuna {
+    position: absolute;
+    top: 500px;
+    left: 300px;
+    width: 98px;
+    height: 74px;
+    transform: matrix(0.91, 0.42, -0.42, 0.91, 0, 0);
+    background: transparent url("img/tuna.png") 0% 0% no-repeat padding-b;
 }
 
 /* .newFlex {

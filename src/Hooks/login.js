@@ -48,7 +48,6 @@ export default function Login() {
                     <button>SIGN UP</button>
                 </div> */}
             </div>
-            <div className="logFooter"></div>
         </div>
     );
 }
