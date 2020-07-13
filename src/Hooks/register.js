@@ -27,6 +27,9 @@ export default function Register() {
             <img className="coca" src="images/coca.png" />
             <img className="chop" src="images/chop.png" />
             <img className="tuna" src="images/tuna.png" />
+            <img className="chips" src="images/chips.png" />
+            <img className="cup" src="images/cup.png" />
+            <img className="pizza" src="images/pizza.png" />
             <div className="regInp">
                 <input
                     className="one"

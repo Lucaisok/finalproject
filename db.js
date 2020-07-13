@@ -25,7 +25,7 @@ module.exports.getHashed = (email) => {
 module.exports.getId = (email) => {
     return db.query(
         `
-    SELECT id FROM users WHERE email = $1`,
+    SELECT id, location FROM users WHERE email = $1`,
         [email]
     );
 };
@@ -90,4 +90,11 @@ module.exports.getResults = (giorno, mese, anno, ora, location) => {
     WHERE giorno = $1 AND mese = $2 AND anno = $3 AND ora = $4 AND location = $5`,
         [giorno, mese, anno, ora, location]
     );
+};
+
+module.exports.deleteData = () => {
+    return db.query(`
+    DELETE FROM customers
+    WHERE created_at < NOW() - INTERVAL 14 DAY
+    `);
 };

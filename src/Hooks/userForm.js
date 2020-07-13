@@ -1,7 +1,7 @@
 import React from "react";
 import { useStatefulFields } from "./useStatefulFields";
 import { useAuthSubmit } from "./useAuthSubmit";
-
+import { Link } from "react-router-dom";
 export default function UserForm(props) {
     const [values, handleChange] = useStatefulFields();
     const [error, handleClick] = useAuthSubmit(
@@ -9,24 +9,40 @@ export default function UserForm(props) {
         values
     ); //to do server post route
     return (
-        <div>
+        <div className="userFormContainer">
+            <div className="welcomeHeader">
+                <div className="logo">
+                    <Link className="name" to={"/"}>
+                        <p>Collect</p>
+                    </Link>
+                </div>
+                <div className="nav"></div>
+            </div>
             {error && <p>Ops...something went wrong</p>}
+            <img src="images/cloud.png" className="nuvola" />
+            <img src="images/key.png" className="chiave" />
+            <img src="images/toast.png" className="toast" />
+            <h1>Welcome</h1>
             <input
+                className="primo"
                 name="customerFirst"
                 placeholder="First Name"
                 onChange={handleChange}
             />
             <input
+                className="secondo"
                 name="customerLast"
                 placeholder="Last Name"
                 onChange={handleChange}
             />
             <input
+                className="terzo"
                 name="customerEmail"
                 placeholder="Email"
                 onChange={handleChange}
             />
             <input
+                className="quarto"
                 name="telephone"
                 placeholder="Tel Number"
                 onChange={handleChange}
@@ -37,16 +53,18 @@ export default function UserForm(props) {
                 onChange={handleChange}
             /> */}
             <input
+                className="quinto"
                 name="tableNumber"
                 placeholder="Table"
                 onChange={handleChange}
             />
             <input
+                className="sesto"
                 name="guestsNumber"
                 placeholder="Number of Guests"
                 onChange={handleChange}
             />
-            <select name="day" onChange={handleChange}>
+            <select name="day" onChange={handleChange} className="settimo">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -79,7 +97,7 @@ export default function UserForm(props) {
                 <option value="30">30</option>
                 <option value="31">31</option>
             </select>
-            <select name="month" onChange={handleChange}>
+            <select name="month" onChange={handleChange} className="ottavo">
                 <option value="January">January</option>
                 <option value="February">February</option>
                 <option value="March">March</option>
@@ -93,8 +111,12 @@ export default function UserForm(props) {
                 <option value="November">November</option>
                 <option value="December">December</option>
             </select>
-            <input name="year" placeholder="Year" onChange={handleChange} />
-            <select name="hour" onChange={handleChange}>
+            <select
+                name="hour"
+                onChange={handleChange}
+                className="decimo"
+                placeholder="Hour"
+            >
                 <option value="00-02">00-02</option>
                 <option value="02-04">02-04</option>
                 <option value="04-06">04-06</option>
@@ -108,6 +130,12 @@ export default function UserForm(props) {
                 <option value="20-22">20-22</option>
                 <option value="22-24">22-24</option>
             </select>
+            <input
+                name="year"
+                placeholder="Year"
+                onChange={handleChange}
+                className="nono"
+            />
             <button onClick={handleClick}>Submit</button>
         </div>
     );

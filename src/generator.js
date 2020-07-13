@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import QRCode from "qrcode";
-import UserForm from "./Hooks/userForm";
-import axios from "./axios";
+// import UserForm from "./Hooks/userForm";
+// import axios from "./axios";
 
 export default class Qrcode extends Component {
     constructor(props) {
@@ -24,14 +24,11 @@ export default class Qrcode extends Component {
 
     render() {
         return (
-            <div>
-                <canvas width="250" height="250" id="canvas" align="center" />
+            <div className="generator">
+                <canvas width="450" height="450" id="canvas" align="center" />
                 <button onClick={() => this.generateQR()}>
                     Generate QRCode
                 </button>
-                <p>{this.props.location}</p> this is the string we need to
-                attach to str
-                {/* <UserForm location={this.props.location} /> */}
             </div>
         );
     }

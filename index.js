@@ -6,6 +6,7 @@ const secret = require("./secrets.json");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc");
 const db = require("./db");
+const cron = require("node-cron");
 //const { isUndefined } = require("util");
 
 app.use(
@@ -38,6 +39,11 @@ if (process.env.NODE_ENV != "production") {
 }
 
 app.use(express.static("public"));
+
+cron.schedule("0 1 * * *", () => {
+    //should run every day at 01.00
+    db.deleteData();
+});
 
 app.post("/register", (req, res) => {
     console.log(req.body);
@@ -89,6 +95,8 @@ app.post("/login", (req, res) => {
                                 .then((result) => {
                                     console.log("result: ", result);
                                     req.session.userId = result.rows[0].id; //her we call back userId
+                                    req.session.location =
+                                        result.rows[0].location;
                                     res.json({ success: true });
                                 })
                                 .catch((err) => console.log(err));
@@ -159,6 +167,11 @@ app.post("/customersData", (req, res) => {
                 .catch((err) => console.log(err));
         })
         .catch((err) => console.log(err));
+});
+
+app.get("/logout", (req, res) => {
+    req.session = null;
+    res.end();
 });
 
 app.get("/welcome", (req, res) => {
