@@ -4,7 +4,10 @@ import { useAuthSubmit } from "./useAuthSubmit";
 
 export default function UserForm(props) {
     const [values, handleChange] = useStatefulFields();
-    const [error, handleClick] = useAuthSubmit("/userForm", values); //to do server post route
+    const [error, handleClick] = useAuthSubmit(
+        `/userForm/${props.location}`,
+        values
+    ); //to do server post route
     return (
         <div>
             {error && <p>Ops...something went wrong</p>}
@@ -28,11 +31,11 @@ export default function UserForm(props) {
                 placeholder="Tel Number"
                 onChange={handleChange}
             />
-            <input
+            {/* <input
                 name="location"
                 value={props.location}
                 onChange={handleChange}
-            />
+            /> */}
             <input
                 name="tableNumber"
                 placeholder="Table"

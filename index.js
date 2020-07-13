@@ -112,16 +112,19 @@ app.get("/user", async function (req, res) {
     }
 });
 
-app.post("/userForm", async function (req, res) {
+app.post("/userForm/:location", async function (req, res) {
     console.log(req.body);
+    console.log(req.params.location);
+    // let location = " " + req.params.location;
+    // console.log(location);
     try {
         const data = await db.collect(
             req.body.customerFirst,
             req.body.customerLast,
             req.body.customerEmail,
             req.body.telephone,
+            req.params.location,
             req.body.tableNumber,
-            req.body.location,
             req.body.guestsNumber,
             req.body.day,
             req.body.month,
@@ -134,6 +137,28 @@ app.post("/userForm", async function (req, res) {
         console.log(err);
         res.json({ success: false });
     }
+});
+
+app.post("/customersData", (req, res) => {
+    console.log("me!!!", req.body);
+    console.log("req.session.location: ", req.session.location);
+    db.getData(req.body.firstName, req.body.lastName)
+        .then((data) => {
+            console.log("giorno, mese, anno, ora: ", data);
+            db.getResults(
+                data.rows[0].giorno,
+                data.rows[0].mese,
+                data.rows[0].anno,
+                data.rows[0].ora,
+                req.session.location
+            )
+                .then((data) => {
+                    console.log("I am customers data: ", data);
+                    res.json(data.rows);
+                })
+                .catch((err) => console.log(err));
+        })
+        .catch((err) => console.log(err));
 });
 
 app.get("/welcome", (req, res) => {

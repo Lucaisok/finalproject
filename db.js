@@ -72,3 +72,22 @@ module.exports.collect = (
         ]
     );
 };
+
+module.exports.getData = (first, last) => {
+    return db.query(
+        `
+    SELECT giorno, mese, anno, ora
+    FROM customers
+    WHERE first = $1 AND last = $2`,
+        [first, last]
+    );
+};
+
+module.exports.getResults = (giorno, mese, anno, ora, location) => {
+    return db.query(
+        `
+    SELECT * FROM customers
+    WHERE giorno = $1 AND mese = $2 AND anno = $3 AND ora = $4 AND location = $5`,
+        [giorno, mese, anno, ora, location]
+    );
+};
