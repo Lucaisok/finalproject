@@ -28,9 +28,9 @@ export default function UserForm(props) {
                 <div className="nav"></div>
             </div>
             {error && <p>Ops...something went wrong</p>}
-            <img src="images/cloud.png" className="nuvola" />
-            <img src="images/key.png" className="chiave" />
-            <img src="images/toast.png" className="toast" />
+            <img src="/images/cloud.png" className="nuvola" />
+            <img src="/images/key.png" className="chiave" />
+            <img src="/images/toast.png" className="toast" />
             <h1>Welcome</h1>
             <input
                 className="primo"
@@ -57,11 +57,6 @@ export default function UserForm(props) {
                 onChange={handleChange}
             />
             <input name="location" readOnly value={props.match.params.locale} />
-            {/* <input
-                type="hidden"
-                name="location"
-                value={props.match.params.locale}
-            /> */}
             <input
                 className="quinto"
                 name="tableNumber"

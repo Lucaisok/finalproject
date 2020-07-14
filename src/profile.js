@@ -80,6 +80,7 @@ export default function Profile(props) {
                 })}
             </div>
             <Generator location={props.location} />
+            <div className="footer2"></div>
         </div>
     );
 }
