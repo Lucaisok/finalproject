@@ -21,9 +21,9 @@ export default function UserForm(props) {
         <div className="userFormContainer">
             <div className="welcomeHeader">
                 <div className="logo">
-                    <Link className="name" to={"/"}>
-                        <p>Collect</p>
-                    </Link>
+                    {/* <Link className="name" to={"/welcome"}> */}
+                    <p>Collect</p>
+                    {/* </Link> */}
                 </div>
                 <div className="nav"></div>
             </div>

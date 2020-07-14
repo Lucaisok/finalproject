@@ -1,9 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Thanks() {
     return (
         <div className="thankContainer">
-            <h1 className="uno">Thank you !</h1>
+            <div className="welcomeHeader">
+                <div className="logo">
+                    <Link className="name" to={"/welcome"}>
+                        <p>Collect</p>
+                    </Link>
+                </div>
+                <div className="nav"></div>
+            </div>
+            <h1 className="uno">Thank you</h1>
             <h3 className="cacchio">
                 Choosing Collect means{" "}
                 <span>
@@ -16,7 +25,7 @@ export default function Thanks() {
                 and therefore, trees!
             </h3>
             <img src="images/care.png" className="thankCare"></img>
-            <h1>do not worry</h1>
+            <h1 className="bru">do not worry</h1>
             <h3 className="due">
                 all your data will be{" "}
                 <span>

@@ -619,12 +619,12 @@ body {
     font-size: 30px;
     line-height: 40px;
     position: relative;
-    bottom: 80px;
+    bottom: 50px;
 }
 
 .thankCare {
     position: absolute;
-    top: 293px;
+    top: 313px;
     left: 680px;
     width: 107px;
     height: 120px;
@@ -637,7 +637,12 @@ body {
     font-size: 80px;
     font-family: "Roboto", sans-serif;
     position: relative;
-    bottom: 30px;
+    top: 30px;
+}
+
+.bru {
+    position: relative;
+    top: 20px;
 }
 
 .userFormContainer {
@@ -654,10 +659,11 @@ body {
 
 .userFormContainer h1 {
     color: #1f4554;
-    font-size: 40px;
+    font-size: 30px;
     font-family: "Roboto", sans-serif;
     position: relative;
     top: 5px;
+    margin-top: 40px;
 }
 
 .userFormContainer input {
@@ -669,20 +675,22 @@ body {
     border-radius: 24px;
     opacity: 0.8;
     margin-bottom: 10px;
+    margin-top: 10px;
     text-align: center;
     position: relative;
     bottom: 10px;
 }
 
 .userFormContainer select {
-    width: 275px;
-    height: 38px;
+    width: 285px;
+    height: 43px;
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 1px 3px #00000033;
     border: 2px solid #27ac93;
     border-radius: 24px;
     opacity: 0.8;
     margin-bottom: 10px;
+    margin-top: 10px;
     text-align: center;
     position: relative;
     bottom: 10px;
@@ -697,12 +705,13 @@ body {
     border-radius: 4px;
     opacity: 1;
     position: relative;
-    bottom: 5px;
+    margin-top: 10px;
+    bottom: 1px;
 }
 
 .nuvola {
     position: absolute;
-    top: 62px;
+    top: 82px;
     left: 352px;
     width: 86px;
     height: 97px;
@@ -711,17 +720,17 @@ body {
 
 .chiave {
     position: absolute;
-    top: 550px;
+    top: 350px;
     left: 980px;
     width: 77px;
     height: 76px;
     background: transparent url("img/key.png") 0% 0% no-repeat padding-box;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .toast {
     position: absolute;
-    top: 501px;
+    top: 701px;
     left: 356px;
     width: 100px;
     height: 102px;
@@ -744,8 +753,24 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 50px;
-    right: 385px;
+    top: 43px;
+    right: 410px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav button {
+    margin-left: 30px;
+}
+
+.nav h4 {
+    font-size: 20px;
+    color: white;
+    font-family: "Roboto", sans-serif;
 }
 
 .searchCont input {
@@ -772,8 +797,8 @@ body {
 
 .generator {
     position: fixed;
-    left: 1150px;
-    bottom: 273px;
+    left: 1070px;
+    bottom: 295px;
 }
 
 .generator button {
@@ -788,23 +813,38 @@ body {
 
 .resultsContainer {
     position: relative;
-    left: 550px;
-    bottom: 180px;
-    width: 500px;
-    height: 300px;
+    left: 510px;
+    bottom: 375px;
+    width: 430px;
+    height: 200px;
+    /* width: 1400px;
+    height: 470px;
+    left: 20px;
+    top: 1px; */
     overflow-y: scroll;
+    overflow-x: scroll;
+    background-color: white;
     border: 2px solid #27ac93;
-    background-color: whitesmoke;
+    z-index: 200;
 }
 
 .person {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    position: relative;
+    /* left: 550px;
+    bottom: 180px;
+    width: 500px;
+    height: 300px; */
+    /* overflow-y: scroll; */
+    /* border: 2px solid #27ac93; */
+    /* background-color: white; */
 }
 
 .person p {
-    margin-right: 10px;
+    margin-right: 15px;
+    padding-left: 10px;
 }
 
 .footer2 {
@@ -813,4 +853,34 @@ body {
     height: 100px;
     position: fixed;
     top: 620px;
+}
+
+span {
+    /* width: 10px;
+    height: 10px; */
+    margin-right: 10px;
+}
+
+.info {
+    color: #678691;
+    font-size: 25px;
+    position: relative;
+    left: 200px;
+    top: 15px;
+}
+
+.info2 {
+    color: #678691;
+    font-size: 25px;
+    position: relative;
+    left: 535px;
+    bottom: 285px;
+}
+
+.info3 {
+    color: #678691;
+    font-size: 25px;
+    position: relative;
+    left: 980px;
+    bottom: 376px;
 }

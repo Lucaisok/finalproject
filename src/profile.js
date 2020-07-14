@@ -37,18 +37,22 @@ export default function Profile(props) {
                     <p>Collect</p>
                 </div>
                 <div className="nav">
+                    <h4>{props.location}</h4>
                     <button className="logButt" onClick={logOut}>
                         LOG OUT
                     </button>{" "}
                 </div>
             </div>
-            <h3>
-                Hi {props.first},{" "}
+            {/* <h3>
+                Hi {props.first},
+            </h3> */}
+            <h4 className="info">
+                Search customer by{" "}
                 <span>
                     <br></br>
-                </span>
-                enjoy your day at {props.location}
-            </h3>
+                </span>{" "}
+                name and surname
+            </h4>
             <div className="searchCont">
                 <input
                     onChange={handleChange}
@@ -64,17 +68,41 @@ export default function Profile(props) {
                 />
                 <button onClick={handleClick}>Search</button>
             </div>
+            <h4 className="info2">
+                Retrieve data about all customers{" "}
+                <span>
+                    <br></br>
+                </span>{" "}
+                present at the same date and time
+            </h4>
+            <h4 className="info3">
+                Generate QR Code in order to{" "}
+                <span>
+                    <br></br>
+                </span>{" "}
+                access your dedicated form !
+            </h4>
             <div className="resultsContainer">
                 {customers.map((person, idx) => {
                     return (
                         <div key={idx} className="person">
                             <p>
                                 <strong>
-                                    {person.first + " " + person.last}
+                                    {person.first}{" "}
+                                    <span>
+                                        <br></br>
+                                    </span>{" "}
+                                    {person.last}
                                 </strong>
                             </p>
-                            <p>{person.email}</p>
-                            <p>{person.tel}</p>
+                            <p>
+                                <span>&#9993;</span>
+                                {person.email}
+                            </p>
+                            <p>
+                                <span>&#9743;</span>
+                                {person.tel}
+                            </p>
                         </div>
                     );
                 })}
