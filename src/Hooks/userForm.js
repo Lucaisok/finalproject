@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStatefulFields } from "./useStatefulFields";
 import { useAuthSubmit } from "./useAuthSubmit";
 import { Link } from "react-router-dom";
 export default function UserForm(props) {
     const [values, handleChange] = useStatefulFields();
     const [error, handleClick] = useAuthSubmit(
-        `/userForm/${props.location}`,
-        values
-    ); //to do server post route
+        `/userForm/${props.match.params.locale}.json`,
+        {
+            ...values,
+            location: props.match.params.locale,
+        }
+    );
+
+    useEffect(() => {
+        const locale = props.match.params.locale;
+        console.log("me?", locale);
+    });
+
     return (
         <div className="userFormContainer">
             <div className="welcomeHeader">
@@ -47,10 +56,11 @@ export default function UserForm(props) {
                 placeholder="Tel Number"
                 onChange={handleChange}
             />
+            <input name="location" readOnly value={props.match.params.locale} />
             {/* <input
+                type="hidden"
                 name="location"
-                value={props.location}
-                onChange={handleChange}
+                value={props.match.params.locale}
             /> */}
             <input
                 className="quinto"

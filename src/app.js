@@ -44,9 +44,15 @@ class App extends React.Component {
                 />
                 <Route exact path="/thanks" component={Thanks} />
                 <Route
-                    exact
-                    path="/userForm"
-                    render={() => <UserForm location={this.state.location} />}
+                    path="/userForm/:locale"
+                    render={(props) => (
+                        <UserForm
+                            location={this.state.location}
+                            key={props.match.url}
+                            match={props.match}
+                            history={props.history}
+                        />
+                    )}
                 />
                 <Route
                     exact

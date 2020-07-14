@@ -120,8 +120,8 @@ app.get("/user", async function (req, res) {
     }
 });
 
-app.post("/userForm/:location", async function (req, res) {
-    console.log(req.body);
+app.post("/userForm/:locale.json", async function (req, res) {
+    console.log("check for location", req.body);
     console.log(req.params.location);
     // let location = " " + req.params.location;
     // console.log(location);
@@ -131,7 +131,7 @@ app.post("/userForm/:location", async function (req, res) {
             req.body.customerLast,
             req.body.customerEmail,
             req.body.telephone,
-            req.params.location,
+            req.body.location,
             req.body.tableNumber,
             req.body.guestsNumber,
             req.body.day,
