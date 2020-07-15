@@ -2,12 +2,20 @@ const express = require("express");
 const app = express();
 const compression = require("compression");
 const cookieSession = require("cookie-session");
-const secret = require("./secrets.json");
+//const secret = require("./secrets.json");
 const csurf = require("csurf");
 const { hash, compare } = require("./bc");
 const db = require("./db");
 const cron = require("node-cron");
 //const { isUndefined } = require("util");
+
+let secret;
+
+if (process.env.DATABASE_URL) {
+    secret = process.env;
+} else {
+    secret = require("./secrets.json");
+}
 
 app.use(
     cookieSession({
