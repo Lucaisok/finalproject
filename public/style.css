@@ -731,6 +731,7 @@ body {
 .profileContainer {
     position: relative;
     top: 80px;
+    height: 400px;
 }
 
 .profileContainer h3 {
@@ -788,9 +789,9 @@ body {
 }
 
 .generator {
-    position: fixed;
+    position: absolute;
     left: 1070px;
-    bottom: 295px;
+    bottom: 90px;
 }
 
 .generator button {
@@ -805,9 +806,9 @@ body {
 
 .resultsContainer {
     position: relative;
-    left: 515px;
+    left: 495px;
     bottom: 375px;
-    width: 430px;
+    width: 460px;
     height: 200px;
     /* width: 1400px;
     height: 470px;
@@ -825,6 +826,7 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     position: relative;
+    align-items: center;
     /* left: 550px;
     bottom: 180px;
     width: 500px;

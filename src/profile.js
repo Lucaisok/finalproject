@@ -93,17 +93,11 @@ export default function Profile(props) {
                                 </strong>
                             </p>
                             <p>
-                                <span>&#9993;</span>{" "}
-                                <span>
-                                    <br></br>
-                                </span>{" "}
+                                <span>&#9993;</span>
                                 {person.email}
                             </p>
                             <p>
-                                <span>&#9743;</span>{" "}
-                                <span>
-                                    <br></br>
-                                </span>{" "}
+                                <span>&#9743;</span>
                                 {person.tel}
                             </p>
                         </div>
