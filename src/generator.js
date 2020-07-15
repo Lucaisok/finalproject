@@ -11,7 +11,7 @@ export default class Qrcode extends Component {
 
     generateQR() {
         let location = this.props.location;
-        let str = `http://localhost:8080/userForm/${location}`; // can not add /this.props.location to URL
+        let str = `https://collect-webapp.herokuapp.com/${location}`; // can not add /this.props.location to URL
 
         QRCode.toCanvas(document.getElementById("canvas"), str, function (err) {
             if (err) {
