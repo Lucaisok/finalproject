@@ -44,7 +44,7 @@ class App extends React.Component {
                 />
                 <Route exact path="/thanks" component={Thanks} />
                 <Route
-                    path="/userForm/:locale"
+                    path="https://collect-webapp.herokuapp.com/userForm/:locale"
                     render={(props) => (
                         <UserForm
                             location={this.state.location}
