@@ -280,14 +280,6 @@ body {
     right: 80px;
 }
 
-.footer {
-    background-color: rgb(39, 172, 147);
-    width: 100%;
-    height: 150px;
-    position: relative;
-    top: 150px;
-}
-
 .logFlex {
     display: flex;
     flex-direction: column;
@@ -813,7 +805,7 @@ body {
 
 .resultsContainer {
     position: relative;
-    left: 510px;
+    left: 515px;
     bottom: 375px;
     width: 430px;
     height: 200px;
@@ -847,14 +839,6 @@ body {
     padding-left: 10px;
 }
 
-.footer2 {
-    background-color: rgb(39, 172, 147);
-    width: 100%;
-    height: 100px;
-    position: fixed;
-    top: 620px;
-}
-
 span {
     /* width: 10px;
     height: 10px; */
@@ -883,4 +867,121 @@ span {
     position: relative;
     left: 980px;
     bottom: 376px;
+}
+
+.heart {
+    color: red;
+}
+
+.developed {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    margin-left: 20px;
+}
+
+.footer {
+    background-color: rgb(39, 172, 147);
+    width: 100%;
+    height: 150px;
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer2 {
+    background-color: rgb(39, 172, 147);
+    width: 100%;
+    height: 115px;
+    position: fixed;
+    top: 605px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer3 {
+    background-color: rgb(39, 172, 147);
+    width: 100%;
+    height: 150px;
+    position: relative;
+    top: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer4 {
+    background-color: rgb(39, 172, 147);
+    width: 100%;
+    height: 150px;
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer3 button {
+    width: 60px;
+    height: 33px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 0px 4px 4px 0px;
+    border: none;
+    opacity: 1;
+    color: rgb(39, 172, 147);
+    position: relative;
+    bottom: 10px;
+}
+
+.about {
+    display: block;
+}
+
+.about p {
+    color: white;
+    margin-left: 100px;
+}
+
+.social {
+    display: block;
+    color: white;
+    margin-left: 120px;
+}
+
+.newsletter {
+    display: inline;
+}
+
+.newsletter input {
+    border: 1px solid #ffffff;
+    border-radius: 4px 0px 0px 4px;
+    opacity: 1;
+    text-align: center;
+    width: 211px;
+    height: 29px;
+    background-color: rgb(39, 172, 147);
+    color: white;
+}
+
+.newsletter ::placeholder {
+    color: white;
+}
+
+.newsletter button {
+    width: 60px;
+    height: 33px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border-radius: 0px 4px 4px 0px;
+    border: none;
+    opacity: 1;
+    color: rgb(39, 172, 147);
+}
+
+.deskContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }

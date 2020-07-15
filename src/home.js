@@ -90,7 +90,33 @@ export default function Home() {
                 <img className="code" src="images/code.png" />
                 <img className="qr" src="images/qr.png" />
             </div>
-            <div className="footer"></div>
+            <div className="footer">
+                <p className="developed">
+                    Developed with <span className="heart"> ❤</span>in Berlin
+                </p>
+                <div className="about">
+                    <p>About us</p>
+                    <p>Contact</p>
+                    <p>Terms and Conditions</p>
+                </div>
+                <div className="social">
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                    <p>Instagram</p>
+                </div>
+                <div className="social">
+                    <p>Subscribe to our newsletter</p>
+                    <div className="newsletter">
+                        <input placeholder="Email Address" />
+                        <button>OK</button>
+                    </div>
+                </div>
+                <div className="social">
+                    <p>Hohenstaufenstr. 35</p>
+                    <p>+49 173 4287628</p>
+                    <p>lucatomarelli1@gmail.com</p>
+                </div>
+            </div>
         </div>
     );
 }

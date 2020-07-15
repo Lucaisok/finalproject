@@ -43,9 +43,6 @@ export default function Profile(props) {
                     </button>{" "}
                 </div>
             </div>
-            {/* <h3>
-                Hi {props.first},
-            </h3> */}
             <h4 className="info">
                 Search customer by{" "}
                 <span>
@@ -96,11 +93,17 @@ export default function Profile(props) {
                                 </strong>
                             </p>
                             <p>
-                                <span>&#9993;</span>
+                                <span>&#9993;</span>{" "}
+                                <span>
+                                    <br></br>
+                                </span>{" "}
                                 {person.email}
                             </p>
                             <p>
-                                <span>&#9743;</span>
+                                <span>&#9743;</span>{" "}
+                                <span>
+                                    <br></br>
+                                </span>{" "}
                                 {person.tel}
                             </p>
                         </div>
@@ -108,7 +111,33 @@ export default function Profile(props) {
                 })}
             </div>
             <Generator location={props.location} />
-            <div className="footer2"></div>
+            <div className="footer2">
+                <p className="developed">
+                    Developed with <span className="heart"> ❤</span>in Berlin
+                </p>
+                <div className="about">
+                    <p>About us</p>
+                    <p>Contact</p>
+                    <p>Terms and Conditions</p>
+                </div>
+                <div className="social">
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                    <p>Instagram</p>
+                </div>
+                <div className="social">
+                    <p>Subscribe to our newsletter</p>
+                    <div className="newsletter">
+                        <input placeholder="Email Address" />
+                        <button>OK</button>
+                    </div>
+                </div>
+                <div className="social">
+                    <p>Hohenstaufenstr. 35</p>
+                    <p>+49 173 4287628</p>
+                    <p>lucatomarelli1@gmail.com</p>
+                </div>
+            </div>
         </div>
     );
 }
