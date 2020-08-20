@@ -8,6 +8,7 @@ export function useStatefulFields() {
             ...values,
             [e.target.name]: e.target.value,
         });
+        console.log("LooK!", values);
     };
     return [values, handleChange];
 }

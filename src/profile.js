@@ -5,16 +5,30 @@ import axios from "./axios";
 
 export default function Profile(props) {
     const [values, handleChange] = useStatefulFields();
-    // const [customers, setCustomers] = useState([]);
     const [customers, setCustomers] = useState([]);
+    const [isVisible, setIsVisible] = useState(false);
+    const [message, setMessage] = useState("");
+
     const handleClick = (e) => {
         e.preventDefault();
         axios
             .post("/customersData", values)
             .then((data) => {
                 console.log(data);
-                console.log(data.data);
+                console.log("HERE", data.data);
                 setCustomers(data.data);
+                setIsVisible(true);
+                if (customers.length === -1) {
+                    setMessage(
+                        `Luckly no other customers were present at the same date and time of ${data.data[0].first}`
+                    );
+                } else {
+                    setMessage(
+                        `Here is a list of all the customers present at the same date and time of ${
+                            data.data[0].first + data.data[0].last
+                        }, please get in touch with them as soon as possible!`
+                    );
+                }
                 console.log("??", customers);
             })
             .catch((err) => console.log(err));
@@ -24,6 +38,10 @@ export default function Profile(props) {
         axios.get("/logout").then(() => {
             location.replace("/");
         });
+    };
+
+    const closeModal = () => {
+        setIsVisible(false);
     };
 
     useEffect(() => {
@@ -43,68 +61,70 @@ export default function Profile(props) {
                     </button>{" "}
                 </div>
             </div>
-            <h4 className="info">
-                Search customer by{" "}
-                <span>
-                    <br></br>
-                </span>{" "}
-                name and surname
-            </h4>
-            <div className="searchCont">
-                <input
-                    onChange={handleChange}
-                    className="firstName"
-                    name="firstName"
-                    placeholder="First Name"
-                />
-                <input
-                    onChange={handleChange}
-                    className="lastName"
-                    name="lastName"
-                    placeholder="Last Name"
-                />
-                <button onClick={handleClick}>Search</button>
-            </div>
-            <h4 className="info2">
-                Retrieve data about all customers{" "}
-                <span>
-                    <br></br>
-                </span>{" "}
-                present at the same date and time
-            </h4>
-            <h4 className="info3">
-                Generate QR Code in order to{" "}
-                <span>
-                    <br></br>
-                </span>{" "}
-                access your dedicated form !
-            </h4>
-            <div className="resultsContainer">
-                {customers.map((person, idx) => {
-                    return (
-                        <div key={idx} className="person">
-                            <p>
-                                <strong>
-                                    {person.first}{" "}
-                                    <span>
-                                        <br></br>
-                                    </span>{" "}
-                                    {person.last}
-                                </strong>
-                            </p>
-                            <p>
-                                <span>&#9993;</span>
-                                {person.email}
-                            </p>
-                            <p>
-                                <span>&#9743;</span>
-                                {person.tel}
-                            </p>
+            <div className="elements">
+                <div>
+                    <h4 className="info">
+                        Search customer by{" "}
+                        <span>
+                            <br></br>
+                        </span>{" "}
+                        name and surname
+                    </h4>
+                    <div className="searchCont">
+                        <input
+                            onChange={handleChange}
+                            className="firstName"
+                            name="firstName"
+                            placeholder="First Name"
+                        />
+                        <input
+                            onChange={handleChange}
+                            className="lastName"
+                            name="lastName"
+                            placeholder="Last Name"
+                        />
+                        <button onClick={handleClick}>Search</button>
+                    </div>
+                </div>
+                <div>
+                    {isVisible && (
+                        <div>
+                            <div className="resultsContainer">
+                                <p className="closer" onClick={closeModal}>
+                                    X
+                                </p>
+                                <p className="message">{message}</p>
+                                {customers.map((person, idx) => {
+                                    return (
+                                        <div key={idx} className="person">
+                                            <p>
+                                                <strong>
+                                                    {person.first}{" "}
+                                                    <span>
+                                                        <br></br>
+                                                    </span>{" "}
+                                                    {person.last}
+                                                </strong>
+                                            </p>
+                                            <p>
+                                                <span>&#9993;</span>
+                                                {person.email}
+                                            </p>
+                                            <p>
+                                                <span>&#9743;</span>
+                                                {person.tel}
+                                            </p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
-                    );
-                })}
+                    )}
+                </div>
+                <div>
+                    <Generator location={props.location} />
+                </div>
             </div>
-            <Generator location={props.location} />
             <div className="footer2">
                 <p className="developed">
                     Developed with <span className="heart"> ❤</span>in Berlin

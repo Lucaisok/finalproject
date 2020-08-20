@@ -25,6 +25,13 @@ export default class Qrcode extends Component {
     render() {
         return (
             <div className="generator">
+                <h4>
+                    Generate Qrcode{" "}
+                    <span>
+                        <br></br>
+                    </span>{" "}
+                    for your customers
+                </h4>
                 <canvas width="450" height="450" id="canvas" align="center" />
                 <button onClick={() => this.generateQR()}>
                     Generate QRCode

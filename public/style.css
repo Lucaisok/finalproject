@@ -747,7 +747,7 @@ body {
     align-items: center;
     position: relative;
     top: 43px;
-    right: 410px;
+    right: 210px;
 }
 
 .nav {
@@ -786,12 +786,20 @@ body {
     border: 2px solid #ffffff;
     border-radius: 4px;
     opacity: 1;
+    color: white;
 }
 
 .generator {
     position: absolute;
-    left: 1070px;
+    left: 870px;
     bottom: 90px;
+}
+
+.generator h4 {
+    position: fixed;
+    top: 95px;
+    color: #678691;
+    font-size: 25px;
 }
 
 .generator button {
@@ -802,23 +810,27 @@ body {
     border: 2px solid #ffffff;
     border-radius: 4px;
     opacity: 1;
+    color: white;
 }
 
 .resultsContainer {
-    position: relative;
-    left: 495px;
-    bottom: 375px;
-    width: 460px;
-    height: 200px;
-    /* width: 1400px;
-    height: 470px;
-    left: 20px;
-    top: 1px; */
+    position: fixed;
+    left: 120px;
+    bottom: 140px;
+    width: 1200px;
+    height: 500px;
     overflow-y: scroll;
     overflow-x: scroll;
     background-color: white;
-    border: 2px solid #27ac93;
+    /* border: 2px solid #27ac93; */
     z-index: 200;
+    text-align: center;
+}
+
+.closer {
+    position: relative;
+    left: 47%;
+    cursor: pointer;
 }
 
 .person {
@@ -827,6 +839,7 @@ body {
     justify-content: flex-start;
     position: relative;
     align-items: center;
+    margin-left: 100px;
     /* left: 550px;
     bottom: 180px;
     width: 500px;
@@ -851,7 +864,7 @@ span {
     color: #678691;
     font-size: 25px;
     position: relative;
-    left: 200px;
+    left: 400px;
     top: 15px;
 }
 
@@ -996,6 +1009,12 @@ span {
 
 .logoLink {
     text-decoration: none;
+}
+
+.message {
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-family: "Roboto", sans-serif;
 }
 
 /* MEDIA QUERIES
