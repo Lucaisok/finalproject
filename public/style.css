@@ -501,7 +501,7 @@ body {
 
 .sigButt {
     position: absolute;
-    top: 550px;
+    top: 580px;
     left: 560px;
     width: 280px;
     height: 56px;
@@ -986,6 +986,16 @@ span {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+.regError {
+    position: relative;
+    left: 40%;
+    top: 185px;
+}
+
+.logoLink {
+    text-decoration: none;
 }
 
 /* MEDIA QUERIES

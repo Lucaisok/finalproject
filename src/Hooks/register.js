@@ -1,6 +1,7 @@
 import React from "react";
 import { useStatefulFields } from "./useStatefulFields";
 import { useAuthSubmit } from "./useAuthSubmit";
+import { Link } from "react-router-dom";
 
 export default function Register() {
     const [values, handleChange] = useStatefulFields();
@@ -10,7 +11,9 @@ export default function Register() {
         <div>
             <div className="welcomeHeader">
                 <div className="logo">
-                    <p>Collect</p>
+                    <Link className="logoLink" to={"/"}>
+                        <p>Collect</p>
+                    </Link>
                 </div>
                 <div className="nav">
                     {/* <Link to={"/login"}>
@@ -21,7 +24,7 @@ export default function Register() {
                     </Link> */}
                 </div>
             </div>
-            {error && <p>Ops...something went wrong</p>}
+            {error && <p className="regError">Ops...something went wrong</p>}
             <h1 className="sign">sign up</h1>
             <img className="cont" src="images/cont.png" />
             <img className="coca" src="images/coca.png" />

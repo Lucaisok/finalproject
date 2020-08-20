@@ -92,9 +92,12 @@ module.exports.getResults = (giorno, mese, anno, ora, location) => {
     );
 };
 
-module.exports.deleteData = () => {
-    return db.query(`
+module.exports.deleteData = (num) => {
+    return db.query(
+        `
     DELETE FROM customers
-    WHERE created_at < NOW() - INTERVAL 14 DAY
-    `);
+    WHERE created_at < CURRENT_TIMESTAMP - INTERVAL $1 DAY
+    `,
+        [num]
+    );
 };

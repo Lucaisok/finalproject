@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useStatefulFields } from "./useStatefulFields";
 import { useAuthSubmit } from "./useAuthSubmit";
+import { Link } from "react-router-dom";
 
 export default function Login() {
     const [values, handleChange] = useStatefulFields();
@@ -10,7 +11,9 @@ export default function Login() {
         <div>
             <div className="welcomeHeader">
                 <div className="logo">
-                    <p>Collect</p>
+                    <Link className="logoLink" to={"/"}>
+                        <p>Collect</p>
+                    </Link>
                 </div>
                 <div className="nav">
                     {/* <Link to={"/login"}>

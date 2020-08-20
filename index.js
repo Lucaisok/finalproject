@@ -50,18 +50,19 @@ app.use(express.static("public"));
 
 cron.schedule("0 1 * * *", () => {
     //should run every day at 01.00
-    db.deleteData();
+    db.deleteData(14);
 });
 
 app.post("/register", (req, res) => {
     console.log(req.body);
     if (
-        req.body.first != "" &&
-        req.body.last != "" &&
-        req.body.location != "" &&
-        req.body.email != "" &&
-        req.body.password != "" &&
-        req.body.password == req.body.repeatPassword
+        (req.body.first,
+        req.body.last,
+        req.body.location,
+        req.body.email,
+        req.body.password,
+        req.body.repeatPassword,
+        req.body.password == req.body.repeatPassword)
     ) {
         hash(req.body.password)
             .then((hashedPassword) => {
@@ -80,9 +81,9 @@ app.post("/register", (req, res) => {
                         req.session.location = result.rows[0].location; // here we set the location value we´ll use later for retrieve info about customers.
                         res.json({ success: true });
                     })
-                    .catch((err) => console.log(err));
+                    .catch((err) => console.log("ME??", err));
             })
-            .catch((err) => console.log(err));
+            .catch((err) => console.log("OR ME?", err));
     } else {
         res.json({ success: false });
     }
@@ -90,7 +91,7 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
     console.log(req.body);
-    if (req.body.email != "" && req.body.password != "") {
+    if ((req.body.email, req.body.password)) {
         db.getHashed(req.body.email)
             .then((hashedPassObj) => {
                 console.log("hashedPassObj", hashedPassObj);
@@ -108,6 +109,8 @@ app.post("/login", (req, res) => {
                                     res.json({ success: true });
                                 })
                                 .catch((err) => console.log(err));
+                        } else {
+                            res.json({ success: false });
                         }
                     })
                     .catch((err) => console.log(err));
