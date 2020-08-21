@@ -8,30 +8,32 @@ export default function Profile(props) {
     const [customers, setCustomers] = useState([]);
     const [isVisible, setIsVisible] = useState(false);
     const [message, setMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState(false);
 
     const handleClick = (e) => {
         e.preventDefault();
         axios
             .post("/customersData", values)
             .then((data) => {
-                console.log(data);
-                console.log("HERE", data.data);
-                setCustomers(data.data);
-                setIsVisible(true);
-                if (customers.length === -1) {
-                    setMessage(
-                        `Luckly no other customers were present at the same date and time of ${data.data[0].first}`
-                    );
+                if (data.data.success === false) {
+                    setErrorMessage(true);
                 } else {
+                    console.log("MEEEEEE", data);
+                    console.log("HERE", data.data);
+                    setCustomers(data.data);
+                    setIsVisible(true);
                     setMessage(
                         `Here is a list of all the customers present at the same date and time of ${
-                            data.data[0].first + data.data[0].last
+                            data.data[0].first + " " + data.data[0].last
                         }, please get in touch with them as soon as possible!`
                     );
+                    setErrorMessage(false);
+                    console.log("??", customers);
                 }
-                console.log("??", customers);
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+            });
     };
 
     const logOut = () => {
@@ -70,6 +72,12 @@ export default function Profile(props) {
                         </span>{" "}
                         name and surname
                     </h4>
+                    {errorMessage && (
+                        <p className="noResult">
+                            Looks like this customer is not present in our
+                            database!
+                        </p>
+                    )}
                     <div className="searchCont">
                         <input
                             onChange={handleChange}
@@ -95,27 +103,29 @@ export default function Profile(props) {
                                 </p>
                                 <p className="message">{message}</p>
                                 {customers.map((person, idx) => {
-                                    return (
-                                        <div key={idx} className="person">
-                                            <p>
-                                                <strong>
-                                                    {person.first}{" "}
-                                                    <span>
-                                                        <br></br>
-                                                    </span>{" "}
-                                                    {person.last}
-                                                </strong>
-                                            </p>
-                                            <p>
-                                                <span>&#9993;</span>
-                                                {person.email}
-                                            </p>
-                                            <p>
-                                                <span>&#9743;</span>
-                                                {person.tel}
-                                            </p>
-                                        </div>
-                                    );
+                                    if (customers.indexOf(person) == 0) {
+                                        return;
+                                    } else {
+                                        return (
+                                            <div key={idx} className="person">
+                                                <p>
+                                                    <strong>
+                                                        {person.first +
+                                                            " " +
+                                                            person.last}
+                                                    </strong>
+                                                </p>
+                                                <p>
+                                                    <span>&#9993;</span>
+                                                    {person.email}
+                                                </p>
+                                                <p>
+                                                    <span>&#9743;</span>
+                                                    {person.tel}
+                                                </p>
+                                            </div>
+                                        );
+                                    }
                                 })}
                             </div>
                         </div>

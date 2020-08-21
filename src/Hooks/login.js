@@ -33,7 +33,7 @@ export default function Login() {
             <img className="contract2" src="images/contract.png" />
 
             <div className="logFlex">
-                {error && <p>Ops...something went wrong</p>}
+                {error && <p className="logErr">Ops...something went wrong</p>}
                 <input
                     name="email"
                     placeholder="Email"

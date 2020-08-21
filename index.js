@@ -177,7 +177,10 @@ app.post("/customersData", (req, res) => {
                 })
                 .catch((err) => console.log(err));
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+            console.log("BB", err);
+            res.json({ success: false });
+        });
 });
 
 app.get("/logout", (req, res) => {
