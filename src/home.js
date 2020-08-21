@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CookieCons from "./Hooks/cookieCons";
 
 export default function Home() {
     return (
@@ -117,6 +118,7 @@ export default function Home() {
                     <p>lucatomarelli1@gmail.com</p>
                 </div>
             </div>
+            <CookieCons />
         </div>
     );
 }

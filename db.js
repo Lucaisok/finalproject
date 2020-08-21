@@ -45,9 +45,8 @@ module.exports.collect = (
     last,
     email,
     tel,
+    indirizzo,
     location,
-    tavolo,
-    guests,
     giorno,
     mese,
     anno,
@@ -55,21 +54,9 @@ module.exports.collect = (
 ) => {
     return db.query(
         `
-    INSERT INTO customers (first, last, email, tel, location, tavolo, guests, giorno, mese, anno, ora)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
-        [
-            first,
-            last,
-            email,
-            tel,
-            location,
-            tavolo,
-            guests,
-            giorno,
-            mese,
-            anno,
-            ora,
-        ]
+    INSERT INTO customers (first, last, email, tel, indirizzo, location, giorno, mese, anno, ora)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+        [first, last, email, tel, indirizzo, location, giorno, mese, anno, ora]
     );
 };
 

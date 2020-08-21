@@ -83,7 +83,10 @@ app.post("/register", (req, res) => {
                     })
                     .catch((err) => console.log("ME??", err));
             })
-            .catch((err) => console.log("OR ME?", err));
+            .catch((err) => {
+                console.log("OR ME?", err);
+                res.json({ success: false });
+            });
     } else {
         res.json({ success: false });
     }
@@ -115,7 +118,10 @@ app.post("/login", (req, res) => {
                     })
                     .catch((err) => console.log(err));
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err);
+                res.json({ success: false });
+            });
     } else {
         res.json({ success: false });
     }
@@ -142,9 +148,8 @@ app.post("/userForm/:locale.json", async function (req, res) {
             req.body.customerLast,
             req.body.customerEmail,
             req.body.telephone,
+            req.body.indirizzo,
             req.body.location,
-            req.body.tableNumber,
-            req.body.guestsNumber,
             req.body.day,
             req.body.month,
             req.body.year,

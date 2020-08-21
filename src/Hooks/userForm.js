@@ -21,13 +21,11 @@ export default function UserForm(props) {
         <div className="userFormContainer">
             <div className="welcomeHeader">
                 <div className="logo">
-                    {/* <Link className="name" to={"/welcome"}> */}
                     <p>Collect</p>
-                    {/* </Link> */}
                 </div>
                 <div className="nav"></div>
             </div>
-            {error && <p>Ops...something went wrong</p>}
+            {error && <p className="formErr">Ops...something went wrong</p>}
             <img src="/images/cloud.png" className="nuvola" />
             <img src="/images/key.png" className="chiave" />
             <img src="/images/toast.png" className="toast" />
@@ -56,19 +54,13 @@ export default function UserForm(props) {
                 placeholder="Tel Number"
                 onChange={handleChange}
             />
-            <input name="location" readOnly value={props.match.params.locale} />
             <input
                 className="quinto"
-                name="tableNumber"
-                placeholder="Table"
+                name="indirizzo"
+                placeholder="Address"
                 onChange={handleChange}
             />
-            <input
-                className="sesto"
-                name="guestsNumber"
-                placeholder="Number of Guests"
-                onChange={handleChange}
-            />
+            <input name="location" readOnly value={props.match.params.locale} />
             <select name="day" onChange={handleChange} className="settimo">
                 <option value="1">1</option>
                 <option value="2">2</option>

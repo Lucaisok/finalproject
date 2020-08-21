@@ -18,13 +18,13 @@ export default function Profile(props) {
                 if (data.data.success === false) {
                     setErrorMessage(true);
                 } else {
-                    console.log("MEEEEEE", data);
+                    console.log("MEEEEEE", values);
                     console.log("HERE", data.data);
                     setCustomers(data.data);
                     setIsVisible(true);
                     setMessage(
                         `Here is a list of all the customers present at the same date and time of ${
-                            data.data[0].first + " " + data.data[0].last
+                            values.firstName + " " + values.lastName
                         }, please get in touch with them as soon as possible!`
                     );
                     setErrorMessage(false);
@@ -103,7 +103,10 @@ export default function Profile(props) {
                                 </p>
                                 <p className="message">{message}</p>
                                 {customers.map((person, idx) => {
-                                    if (customers.indexOf(person) == 0) {
+                                    if (
+                                        person.first == values.firstName &&
+                                        person.last == values.lastName
+                                    ) {
                                         return;
                                     } else {
                                         return (
@@ -115,6 +118,7 @@ export default function Profile(props) {
                                                             person.last}
                                                     </strong>
                                                 </p>
+                                                <p>{person.indirizzo}</p>
                                                 <p>
                                                     <span>&#9993;</span>
                                                     {person.email}
