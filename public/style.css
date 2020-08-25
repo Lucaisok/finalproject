@@ -6,13 +6,6 @@ body {
     overflow-x: hidden;
 }
 
-/* .welcomeBody {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-} */
-
 .welcomeHeader {
     overflow: hidden;
     background-color: rgb(39, 172, 147);
@@ -62,7 +55,6 @@ body {
 .safeData {
     margin-top: 0;
     width: 100%;
-    /* background-color: whitesmoke; */
     height: 300px;
     position: relative;
     left: 200px;
@@ -235,7 +227,6 @@ body {
 .use h3 {
     position: relative;
     bottom: 30px;
-    /* left: 40px; */
 }
 
 .puntoUno {
@@ -842,13 +833,6 @@ body {
     position: relative;
     align-items: center;
     margin-left: 140px;
-    /* left: 550px;
-    bottom: 180px;
-    width: 500px;
-    height: 300px; */
-    /* overflow-y: scroll; */
-    /* border: 2px solid #27ac93; */
-    /* background-color: white; */
     color: #1f4554;
 }
 
@@ -858,8 +842,6 @@ body {
 }
 
 span {
-    /* width: 10px;
-    height: 10px; */
     margin-right: 10px;
 }
 
@@ -1082,31 +1064,302 @@ span {
     border: none;
 }
 
-/* MEDIA QUERIES
+/* MEDIA QUERIES */
 
-@media screen and (max-width: 720px) and (max-height: 1520px) {
-    html {
-        width: 113%;
-        height: 100%;
-    }
-    body {
-        width: 113%;
-        height: 100%;
-    }
+/*TABLET*/
 
-    .userFormContainer {
-        width: 113%;
-        height: 100%;
+@media screen and (max-width: 992px) {
+    /*HOME PAGE*/
+
+    .footer {
+        display: none;
     }
 
+    .lock {
+        width: 68.93px;
+        height: 102.57px;
+        position: relative;
+        bottom: 350px;
+        left: 373px;
+    }
+
+    .contracto {
+        width: 180px;
+        height: 180px;
+        position: relative;
+        left: 222px;
+        bottom: 250px;
+        opacity: 0.9;
+        display: none;
+    }
+
+    .cloud {
+        width: 140px;
+        height: 140px;
+        position: relative;
+        bottom: 60px;
+        right: 70px;
+        opacity: 0.9;
+    }
+
+    .lock {
+        width: 68.93px;
+        height: 102.57px;
+        position: relative;
+        bottom: 330px;
+        left: 373px;
+    }
+
+    .days {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        left: 417px;
+        top: 100px;
+    }
+
+    .world {
+        width: 139px;
+        height: 177px;
+        opacity: 0.9;
+        position: relative;
+        left: 150px;
+        top: 220px;
+    }
+
+    .wood {
+        width: 154px;
+        height: 136px;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 0.8;
+        position: relative;
+        top: 50px;
+        left: 650px;
+    }
+
+    .use {
+        position: relative;
+        left: 300px;
+        top: 50px;
+    }
+
+    /*LOG IN PAGE*/
+
+    .logFlex {
+        display: flex;
+        flex-direction: column;
+        width: 335px;
+        position: absolute;
+        left: 382px;
+        top: 250px;
+        align-items: center;
+    }
+
+    .dinner {
+        display: none;
+    }
+
+    .code2 {
+        display: none;
+    }
+
+    .login {
+        position: absolute;
+        top: 126px;
+        left: 500px;
+        width: 100px;
+        height: 53px;
+        text-align: center;
+        font: Bold 45px/53px Roboto;
+        letter-spacing: 0px;
+        color: #1f4554;
+        opacity: 1;
+    }
+
+    .cloud2 {
+        position: absolute;
+        top: 90px;
+        left: 735px;
+        width: 160px;
+        height: 138px;
+        opacity: 1;
+    }
+
+    .contract2 {
+        position: absolute;
+        top: 563px;
+        left: 778px;
+        width: 97px;
+        height: 91px;
+        background: transparent url(img/contract.png) 0% 0% no-repeat
+            padding-box;
+        opacity: 0.8;
+    }
+
+    /*REGISTRATION*/
+
+    .regInp {
+        position: relative;
+        right: 200px;
+    }
+
+    .chips {
+        display: none;
+    }
+
+    .coca {
+        display: none;
+    }
+
+    .cup {
+        display: none;
+    }
+
+    .pizza {
+        display: none;
+    }
+
+    .tuna {
+        display: none;
+    }
+
+    .chop {
+        display: none;
+    }
+
+    .sigButt {
+        position: absolute;
+        top: 580px;
+        left: 380px;
+        width: 280px;
+        height: 56px;
+        background: #27ac93 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000033;
+        border-radius: 4px;
+        opacity: 1;
+        color: white;
+        font: Thin 35px/41px var(--unnamed-font-family-roboto);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        text-align: center;
+        font: Thin 35px/41px Roboto;
+        letter-spacing: 0px;
+        color: #ffffff;
+        text-transform: uppercase;
+        opacity: 1;
+        border: none;
+    }
+
+    /*PROFILE*/
+
+    .footer2 {
+        display: none;
+    }
+
+    .info {
+        color: #678691;
+        font-size: 25px;
+        position: relative;
+        left: 170px;
+        top: 15px;
+    }
+
+    .generator h4 {
+        position: fixed;
+        top: 95px;
+        right: 150px;
+        color: #678691;
+        font-size: 25px;
+    }
+
+    .generator button {
+        width: 172px;
+        height: 45px;
+        background: #27ac93 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000033;
+        border: 2px solid #ffffff;
+        border-radius: 4px;
+        opacity: 1;
+        color: white;
+        position: relative;
+        right: 230px;
+    }
+
+    #canvas {
+        height: 164px;
+        width: 164px;
+        position: relative;
+        right: 230px;
+    }
+
+    .resultsContainer {
+        position: fixed;
+        left: 40px;
+        bottom: 140px;
+        width: 900px;
+        height: 500px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        background-color: white;
+        border: 1px solid #a1b3b9;
+        box-shadow: 5px 5px #a1b3b9;
+        z-index: 200;
+        text-align: center;
+    }
+
+    /*THANKS*/
+
+    .footer4 {
+        display: none;
+    }
+
+    .thankCare {
+        position: absolute;
+        top: 313px;
+        left: 450px;
+        width: 107px;
+        height: 120px;
+        background: transparent url(img/care.png) 0% 0% no-repeat padding-box;
+        opacity: 1;
+    }
+
+    /*USERFORM*/
+
+    .nuvola {
+        display: none;
+    }
+
+    .toast {
+        display: none;
+    }
+
+    .userFormContainer button {
+        width: 172px;
+        height: 45px;
+        background: #27ac93 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000033;
+        border: 2px solid #ffffff;
+        border-radius: 4px;
+        opacity: 1;
+        position: relative;
+        margin-top: 10px;
+        bottom: 10px;
+    }
+
+    .footer3 {
+        display: none;
+    }
+}
+
+/*MOBILE*/
+@media screen and (max-width: 600px) {
     .welcomeHeader {
         overflow: hidden;
         background-color: rgb(39, 172, 147);
-        width: 112%;
+        width: 100%;
         height: 60px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         margin-bottom: 0;
         position: fixed;
@@ -1115,17 +1368,297 @@ span {
         opacity: 0.9;
     }
 
-    .footer3 {
-        background-color: rgb(39, 172, 147);
-        width: 116%;
-        height: 321px;
+    .safeData {
+        margin-top: 0;
+        width: 100%;
+        height: 300px;
         position: relative;
-        /* top: 1147px; */
-/* top: 1195px;
+        left: 100px;
+        top: 20px;
+    }
+
+    .lock {
+        display: none;
+    }
+
+    .days {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        left: 100px;
+        top: 100px;
+    }
+
+    .edit {
+        display: none;
+    }
+
+    .erase {
+        display: none;
+    }
+
+    .delete {
+        width: 70px;
+        height: 100px;
+        position: relative;
+        bottom: 150px;
+        left: 100px;
+    }
+
+    .surface {
+        width: 130px;
+        height: 160px;
+        position: relative;
+        right: 70px;
+        bottom: 40px;
+    }
+
+    .paper h1 {
+        position: relative;
+        top: 210px;
+        left: 30px;
+    }
+
+    .paper h3 {
+        position: relative;
+        left: 30px;
+        top: 30px;
+    }
+
+    .world {
+        width: 139px;
+        height: 177px;
+        opacity: 0.9;
+        position: relative;
+        left: 100px;
+        top: 20px;
+    }
+
+    .use {
+        position: relative;
+        left: 100px;
+        top: 30px;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .code {
+        display: none;
+    }
+
+    .qr {
+        width: 167px;
+        height: 189px;
+        position: relative;
+        left: 130px;
+    }
+
+    .key {
+        position: relative;
+        left: 300px;
+        width: 90px;
+        height: 90px;
+        bottom: 150px;
+    }
+
+    /*LOGIN*/
+
+    .logFlex {
+        display: flex;
+        flex-direction: column;
+        width: 335px;
+        position: absolute;
+        left: 142px;
+        top: 200px;
+        align-items: center;
+    }
+
+    .login {
+        position: absolute;
+        top: 86px;
+        left: 260px;
+        width: 100px;
+        height: 53px;
+        text-align: center;
+        font: Bold 45px/53px Roboto;
+        letter-spacing: 0px;
+        color: #1f4554;
+        opacity: 1;
+    }
+
+    .care2 {
+        position: absolute;
+        top: 500px;
+        left: 220px;
+        width: 184px;
+        height: 207px;
+    }
+
+    .lock2 {
+        display: none;
+    }
+
+    /*REGISTER*/
+
+    .sign {
+        position: absolute;
+        top: 100px;
+        left: 250px;
+        color: #1f4554;
+    }
+
+    .cont {
+        display: none;
+    }
+
+    .regInp {
+        position: relative;
+        right: 400px;
+        width: 400px;
+    }
+
+    .regInp input {
+        width: 230px;
+    }
+
+    .one {
+        position: absolute;
+        top: 300px;
+        left: 459px;
+        width: 260px;
+        height: 46px;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000033;
+        border: 2px solid #27ac93;
+        border-radius: 24px;
+        opacity: 0.8;
+    }
+
+    .two {
+        left: 459px;
+    }
+
+    .tre {
+        left: 459px;
+    }
+
+    .quattro {
+        left: 720px;
+    }
+
+    .cinque {
+        left: 720px;
+    }
+
+    .sei {
+        left: 720px;
+    }
+
+    .sigButt {
+        left: 180px;
+    }
+
+    /*PROFILE*/
+
+    .nav h4 {
+        display: none;
+    }
+
+    .info {
+        color: #678691;
+        font-size: 25px;
+        position: relative;
+        left: 50px;
+        top: 15px;
+    }
+
+    .generator h4 {
+        position: fixed;
+        top: 95px;
+        right: 20px;
+        color: #678691;
+        font-size: 25px;
+    }
+
+    .generator button {
+        width: 172px;
+        height: 45px;
+        background: #27ac93 0% 0% no-repeat padding-box;
+        box-shadow: 0px 1px 3px #00000033;
+        border: 2px solid #ffffff;
+        border-radius: 4px;
+        opacity: 1;
+        color: white;
+        position: relative;
+        right: 484px;
+    }
+
+    #canvas {
+        height: 164px;
+        width: 164px;
+        position: relative;
+        right: 481px;
+    }
+
+    .searchCont {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 43px;
+        right: 130px;
+    }
+
+    .resultsContainer {
+        position: fixed;
+        left: 20px;
+        bottom: 140px;
+        width: 560px;
+        height: 500px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+        background-color: white;
+        border: 1px solid #a1b3b9;
+        box-shadow: 5px 5px #a1b3b9;
+        z-index: 200;
+        text-align: center;
+    }
+
+    .person {
         display: flex;
         flex-direction: row;
+        justify-content: flex-start;
+        position: relative;
         align-items: center;
-        bottom: 19px;
-        left: 79px;
+        color: #1f4554;
+        position: relative;
+        right: 100px;
     }
-} */
+
+    .message {
+        position: relative;
+        bottom: 8px;
+        font-size: 18.5px;
+        margin-bottom: 50px;
+        font-family: "Roboto", sans-serif;
+        color: #1f4554;
+        font-weight: 500;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 550px;
+        line-height: 30px;
+    }
+
+    .thankCare {
+        position: absolute;
+        top: 313px;
+        left: 250px;
+        width: 107px;
+        height: 120px;
+        background: transparent url(img/care.png) 0% 0% no-repeat padding-box;
+        opacity: 1;
+    }
+}
