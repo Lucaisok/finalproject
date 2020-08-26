@@ -1351,7 +1351,7 @@ span {
 }
 
 /*MOBILE*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     .welcomeHeader {
         overflow: hidden;
         background-color: rgb(39, 172, 147);
