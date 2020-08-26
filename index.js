@@ -50,7 +50,7 @@ app.use(express.static("public"));
 
 cron.schedule("0 1 * * *", () => {
     //should run every day at 01.00
-    db.deleteData(14);
+    db.deleteData();
 });
 
 app.post("/register", (req, res) => {
